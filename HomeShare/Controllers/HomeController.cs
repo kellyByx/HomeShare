@@ -11,19 +11,50 @@ namespace HomeShare.Controllers
         public ActionResult Index()
         {
             return View();
+            //ViewBag.Home = "active";
+            //HomeViewModel hm = new HomeViewModel();
+
+            //return View(hm);
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.About = "active";
+            return View();
+        }
+
+
+        public ActionResult Echange()
+        {
+            ViewBag.Echange = "active";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Contact = "active";
+            return View();
+        }
 
+        public ActionResult Echanger()
+        {
+            ViewBag.Echange = "active";
+            return View();
+        }
+
+        public ActionResult Visiter()
+        {
+            ViewBag.Visiter = "active";
+
+            return View();
+        }
+
+        
+
+        public ActionResult Connection()
+        {
+            ViewBag.Connection = "active";
             return View();
         }
     }
