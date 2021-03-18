@@ -5,6 +5,18 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeShare", "HomeShare\HomeShare.csproj", "{DC2148E2-C8C1-49CD-B603-E4342F16FBCB}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HomeShare.DB", "HomeShare.DB\HomeShare.DB.sqlproj", "{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionDb", "GestionDb\GestionDb.csproj", "{F4F53A0D-7D10-436F-BD23-3AB53449980D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeShare.Repositories", "HomeShare.Repositories\HomeShare.Repositories.csproj", "{4413B5ED-58E7-4BC3-8D1E-63A6945A4127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeShare.Entities", "HomeShare.Entities\HomeShare.Entities.csproj", "{B5532E10-83C3-4928-B8A4-C2956D394990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeShare.Mappers", "HomeShare.Mappers\HomeShare.Mappers.csproj", "{A897BC7D-D321-41E3-BC6F-AB3A4F3121B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeShare.Models", "HomeShare.Models\HomeShare.Models.csproj", "{9ABAECD1-47C9-4613-85E4-F58745C1B64A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,32 @@ Global
 		{DC2148E2-C8C1-49CD-B603-E4342F16FBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2148E2-C8C1-49CD-B603-E4342F16FBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2148E2-C8C1-49CD-B603-E4342F16FBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D20D554-07E7-4303-BBEC-6DA1DD6CA2C4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F4F53A0D-7D10-436F-BD23-3AB53449980D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F53A0D-7D10-436F-BD23-3AB53449980D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F53A0D-7D10-436F-BD23-3AB53449980D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F53A0D-7D10-436F-BD23-3AB53449980D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4413B5ED-58E7-4BC3-8D1E-63A6945A4127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4413B5ED-58E7-4BC3-8D1E-63A6945A4127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4413B5ED-58E7-4BC3-8D1E-63A6945A4127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4413B5ED-58E7-4BC3-8D1E-63A6945A4127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5532E10-83C3-4928-B8A4-C2956D394990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5532E10-83C3-4928-B8A4-C2956D394990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5532E10-83C3-4928-B8A4-C2956D394990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5532E10-83C3-4928-B8A4-C2956D394990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A897BC7D-D321-41E3-BC6F-AB3A4F3121B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A897BC7D-D321-41E3-BC6F-AB3A4F3121B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A897BC7D-D321-41E3-BC6F-AB3A4F3121B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A897BC7D-D321-41E3-BC6F-AB3A4F3121B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABAECD1-47C9-4613-85E4-F58745C1B64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABAECD1-47C9-4613-85E4-F58745C1B64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABAECD1-47C9-4613-85E4-F58745C1B64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABAECD1-47C9-4613-85E4-F58745C1B64A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
