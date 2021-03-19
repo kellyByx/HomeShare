@@ -1,17 +1,7 @@
-﻿@{
+﻿@model HomeShare.Models.ContactModel
+@{
     ViewBag.Title = "Contact";
 }
-
-
-
-<!-- banner -->
-<div class="inside-banner">
-    <div class="container">
-       
-        <h2>@ViewBag.Title</h2>
-    </div>
-</div>
-<!-- banner -->
 
 
 <div class="container">
@@ -19,14 +9,27 @@
         <div class="row contact">
             <div class="col-lg-6 col-sm-6 ">
 
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+                    <input type="text" Name="Nom" class="form-control" placeholder="Nom" required>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    <input type="text" name="Email" class="form-control" placeholder="Email">
+                    @Html.ValidationMessageFor(model => model.Sujet, "", new { @class = "text-danger" })
+                    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    <textarea rows="6" name="Message" class="form-control" placeholder="Message"></textarea>
 
-                <input type="text" class="form-control" placeholder="Full Name">
-                <input type="text" class="form-control" placeholder="Email Address">
-                <input type="text" class="form-control" placeholder="Contact Number">
-                <textarea rows="6" class="form-control" placeholder="Message"></textarea>
-                <button type="submit" class="btn btn-success" name="Submit">Send Message</button>
-
-
+                    <button type="submit" class="btn btn-success" name="Submit">Send Message</button>
+                    @if (ViewBag.SuccessMessage != null)
+                    {
+                        @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                    }
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                    }
+                </form>
 
 
             </div>

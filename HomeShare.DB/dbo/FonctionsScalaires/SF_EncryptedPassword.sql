@@ -1,0 +1,11 @@
+﻿CREATE FUNCTION [dbo].[SF_EncryptedPassword]
+(
+	@password NVARCHAR(32),
+	@salt CHAR(8)
+)
+RETURNS VARBINARY(32)
+AS
+BEGIN
+	RETURN HASHBYTES('SHA2_256',CONCAT(SUBSTRING(@salt,0,4),@password,SUBSTRING(@salt,4,4)))
+END
+

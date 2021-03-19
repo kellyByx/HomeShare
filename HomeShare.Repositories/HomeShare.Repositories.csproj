@@ -41,7 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BienRepository.cs" />
+    <Compile Include="MembreRepository.cs" />
+    <Compile Include="MessageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionDb\GestionDb.csproj">
+      <Project>{f4f53a0d-7d10-436f-bd23-3ab53449980d}</Project>
+      <Name>GestionDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeShare.Entities\HomeShare.Entities.csproj">
+      <Project>{b5532e10-83c3-4928-b8a4-c2956d394990}</Project>
+      <Name>HomeShare.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeShare.Models\HomeShare.Models.csproj">
+      <Project>{9abaecd1-47c9-4613-85e4-f58745c1b64a}</Project>
+      <Name>HomeShare.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

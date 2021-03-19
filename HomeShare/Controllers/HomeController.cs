@@ -1,5 +1,8 @@
-﻿using System;
+﻿using HomeShare.Models;
+using HomeShare.Repositories;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,8 +13,9 @@ namespace HomeShare.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Home = "active";
             return View();
-            //ViewBag.Home = "active";
+           
             //HomeViewModel hm = new HomeViewModel();
 
             //return View(hm);
@@ -31,10 +35,29 @@ namespace HomeShare.Controllers
             return View();
         }
 
+      
+        [HttpGet]
         public ActionResult Contact()
         {
             ViewBag.Contact = "active";
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact(ContactModel contact)
+        {
+            UnitOfWork ctx = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            if (ctx.SaveContact(contact))
+            {
+                ViewBag.SuccessMessage = " Message bien envoyé";
+                return View();
+            }
+            else
+            {
+                ViewBag.ErrorMessage = " Message non enregistré";
+                return View();
+            }
         }
 
         public ActionResult Echanger()
@@ -51,11 +74,12 @@ namespace HomeShare.Controllers
         }
 
         
-
         public ActionResult Connection()
         {
             ViewBag.Connection = "active";
             return View();
         }
+
+
     }
 }

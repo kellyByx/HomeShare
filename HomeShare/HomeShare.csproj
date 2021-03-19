@@ -120,10 +120,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Membre\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Membre\MembreAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="infra\SessionUtils.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +191,8 @@
     <Content Include="fonts\template\din.eot" />
     <Content Include="fonts\template\din.ttf" />
     <Content Include="fonts\template\din.woff" />
+    <Content Include="Areas\Membre\Views\web.config" />
+    <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -196,6 +203,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Account\NewMembre.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -213,14 +221,26 @@
     <Content Include="Views\Home\Echange.cshtml" />
     <Content Include="Views\Home\Echanger.cshtml" />
     <Content Include="Views\Home\Visiter.cshtml" />
-    <Content Include="Views\Home\Connection.cshtml" />
+    <Content Include="Views\Account\Connection.cshtml" />
+    <Content Include="Views\Shared\_NewMembre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Membre\Data\" />
+    <Folder Include="Areas\Membre\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeShare.Models\HomeShare.Models.csproj">
+      <Project>{9abaecd1-47c9-4613-85e4-f58745c1b64a}</Project>
+      <Name>HomeShare.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeShare.Repositories\HomeShare.Repositories.csproj">
+      <Project>{4413b5ed-58e7-4bc3-8d1e-63a6945a4127}</Project>
+      <Name>HomeShare.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -43,7 +43,7 @@
                         <li><a class="@ViewBag.About" href="/Home/About">A Propos de nous</a></li>
                         <li><a class="@ViewBag.Echange" href="/Home/Echange">Echange</a></li>
                         <li><a class="@ViewBag.Contact" href="/Home/Contact">Contact</a></li>
-                        <li><a class="@ViewBag.Membre" href="">Membre</a></li>
+                        <li><a class="@ViewBag.Membre" href="~/Membre/Home/Index">Membre</a></li>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -63,12 +63,28 @@
             <ul class="pull-right">
                 <li><a class="@ViewBag.Echanger" href="/Home/Echanger">Echanger</a></li>
                 <li><a class="@ViewBag.Visiter" href="/Home/Visiter">Visiter</a></li>
-                <li><a class="@ViewBag.Connection" href="/Home/Connection">Connection</a></li>
+                @*<li><a class="@ViewBag.Connection" href="/Home/Connection">Connection</a></li>*@
+                @if (HomeShare.infra.SessionUtils.IsLogged)
+                {
+                    <li class="@ViewBag.Connection"><a href="/Account/deconnection">déconnection</a></li>
+                }
+                else
+                {
+                    <li class="@ViewBag.Connection"><a href="/Account/Connection">Connection</a></li>
+                }
             </ul>
         </div>
         <!-- #Header Starts -->
     </div>
- 
+    <!-- banner -->
+<div class="inside-banner">
+        <div class="container">
+           
+            <h2>@ViewBag.Title</h2>
+        </div>
+    </div>
+<!-- banner -->
+
     @RenderBody()
 
     <div class="footer">
@@ -88,14 +104,14 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-sm-3">
+                @*<div class="col-lg-3 col-sm-3">
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
                     <form class="form-inline" role="form">
                         <input type="text" placeholder="Enter Your email address" class="form-control">
                         <button class="btn btn-success" type="button">Notify Me!</button>
                     </form>
-                </div>
+                </div>*@
 
                 <div class="col-lg-3 col-sm-3">
                     <h4>Follow us</h4>
@@ -122,7 +138,7 @@
     </div>
 
     <!-- Modal -->
-    <div id="loginpop" class="modal fade">
+    <!--<div id="loginpop" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="row">
@@ -154,9 +170,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- /.modal -->
-
+    @RenderSection("Scripts", false)
 </body>
 </html>
 

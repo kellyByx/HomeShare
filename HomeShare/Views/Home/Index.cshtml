@@ -9,6 +9,23 @@
 
         <div class="sl-slider">
 
+            @*@foreach (HomeShare.Models.BienModel item in Model)
+            {
+                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-1"></div>
+                        <h2>@item.Titre</h2>
+                        <blockquote>
+                            <p class="location"><span class="glyphicon glyphicon-map-marker"></span> @item.Numero @item.CodePostal @item.Ville</p>
+                            <p>@item.DescCourt</p>
+                            <cite>ECHANGER MOI</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            }*@
+
+
+
             <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                 <div class="sl-slide-inner">
                     <div class="bg-img bg-img-1"></div>
@@ -68,7 +85,8 @@
                     </blockquote>
                 </div>
             </div>
-        </div><!-- /sl-slider -->
+        </div>
+    <!-- /sl-slider -->
 
 
 
