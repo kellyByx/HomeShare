@@ -22,7 +22,7 @@ namespace HomeShare.Repositories
 
         public List<BienEntity> Get()
         {
-            string requete = "Select * from V_CinqDernierBien";
+            string requete = "Select top 5 [Titre],[DescCourte],[Ville] from BienEchange";
             return base.Get(requete);
         }
 

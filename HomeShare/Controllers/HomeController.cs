@@ -14,11 +14,11 @@ namespace HomeShare.Controllers
         public ActionResult Index()
         {
             ViewBag.Home = "active";
-            return View();
+            //return View();
            
-            //HomeViewModel hm = new HomeViewModel();
+            HomeViewModel hm = new HomeViewModel();
 
-            //return View(hm);
+           return View(hm);
         }
 
         public ActionResult About()

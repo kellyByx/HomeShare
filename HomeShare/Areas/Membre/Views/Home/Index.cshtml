@@ -1,13 +1,31 @@
-﻿
+﻿@model HomeShare.Models.MembreModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Zone Membre";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Zone Membre </h2>
-<br />
-<br />
-@*<a href="~/Membre/Home/Logout" class="btn btn-default">Logout</a>*@
-@*<a href="Home/MesBien" role="button" class="btn btn-default">Mes Biens</a>
-<a href="Home/AddBien" role="button" class="btn btn-default">Ajouter un Biens</a>
-<a href="Home/Echange" role="button" class="btn btn-default">Les demandes d'échanges</a>*@
+<div class="row contact">
+    <div class="col-lg-4 col-sm-4 ">
+
+
+
+    </div>
+    <div class="col-lg-4 col-sm-4 ">
+        <div>
+
+
+            <hr />
+            <h2>     Bienvenu, </br>voici votre espace membre</h2>
+            <br />
+            <br />
+            <p>
+                Porchainement vous aurez accès à:
+            </p>
+           
+            <a href="Home/MesBien" role="button" class="btn btn-default" disabled>Mes Biens</a>
+            <a href="Home/AddBien" role="button" class="btn btn-default" disabled>Ajouter un Biens</a>
+            <a href="Home/Echange" role="button" class="btn btn-default" disabled>Les demandes d'échanges</a>
+            <hr />
+        </div>
+    </div>
+</div>

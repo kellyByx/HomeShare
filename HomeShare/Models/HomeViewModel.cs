@@ -16,7 +16,7 @@ namespace HomeShare.Models
 
         public HomeViewModel()
         {
-           Bien = ctx.GetBienTop();
+           Bien = ctx.GetBien();
         }
 
         public List<BienModel> Bien { get => _bien; set => _bien = value; }

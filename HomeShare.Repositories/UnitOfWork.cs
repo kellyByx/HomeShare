@@ -22,30 +22,38 @@ namespace HomeShare.Repositories
             _messageRepo = new MessageRepository(connectionString);
         }
 
-        public List<BienModel> GetBienTop()
+
+
+      
+
+        public List<BienModel> GetBien()
         {
-         
             List<BienEntity> bienFromDb = _bienRepo.Get();
+
             List<BienModel> biens = new List<BienModel>();
-          
+
             foreach (BienEntity item in bienFromDb)
             {
                 //mapping:
                 BienModel Bien = new BienModel();
 
+
                 Bien.Titre = item.Titre;
-                Bien.DescCourt = item.DescCourt;
+                Bien.DescCourte = item.DescCourte;
                 Bien.NombrePerson = item.NombrePerson;
                 Bien.Ville = item.Ville;
                 Bien.Rue = item.Rue;
                 Bien.Numero = item.Numero;
                 Bien.CodePostal = item.CodePostal;
-                Bien.Photo = "/images/"+item.Photo;
+                Bien.Photo = "/images/" + item.Photo;
                 biens.Add(Bien);
             }
 
             return biens;
         }
+
+      
+    
 
         public bool SaveSignUp(MembreModel mm)
         {
