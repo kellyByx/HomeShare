@@ -222,7 +222,6 @@
     <Content Include="Views\Home\Echanger.cshtml" />
     <Content Include="Views\Home\Visiter.cshtml" />
     <Content Include="Views\Account\Connection.cshtml" />
-    <Content Include="Views\Shared\_NewMembre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

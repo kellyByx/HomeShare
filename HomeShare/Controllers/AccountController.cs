@@ -28,7 +28,9 @@ namespace HomeShare.Controllers
         [HttpGet]
         public ActionResult Connection()
         {
+            ViewBag.Connection = "active";
             return View();
+
         }
 
 
@@ -36,27 +38,54 @@ namespace HomeShare.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Connection(LoginModel lm)
         {
-            //UnitOfWork ctx = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            UnitOfWork ctx = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+
             if (ModelState.IsValid)
             {
-                if (lm.Login != "pandi" && lm.Password != "panda")
+                MembreModel pf = ctx.UserAuth(lm);
+                if (pf == null)
                 {
 
-                    ViewBag.Error = "Erreur Login/Password";
-                    return View();
+                    //if (lm.Login != "Kelly" && lm.Password != "dev")
+                    //{
+                        //ViewBag.Error = "Erreur Login/Password";
+                        return View();
+                    //}
                 }
-
                 else
                 {
                     SessionUtils.IsLogged = true;
+                    SessionUtils.ConnectedUser = pf;
                     return RedirectToAction("Index", "Home", new { area = "Membre" });
                 }
             }
             else
             {
+                //ViewBag.Error = "Erreur Login/Password";
                 return View();
             }
+
+                #region AncientLogin
+                //    if (lm.Login != "pandi" && lm.Password != "panda")
+                //    {
+
+                //        ViewBag.Error = "Erreur Login/Password";
+                //        return View();
+                //    }
+
+                //    else
+                //    {
+                //        SessionUtils.IsLogged = true;
+                //        return RedirectToAction("Index", "Home", new { area = "Membre" });
+                //    }
+                //}
+                //else
+                //{
+                //    return View();
+                #endregion
         }
+        
+
         [HttpGet]
         public ActionResult NewMembre()
         {

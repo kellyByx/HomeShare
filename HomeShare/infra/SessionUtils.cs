@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeShare.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,19 @@ namespace HomeShare.infra
             }
 
             set { HttpContext.Current.Session["logged"] = value; }
+
         }
+
+        public static MembreModel ConnectedUser
+        {
+            get
+            {
+                return (MembreModel)HttpContext.Current.Session["ConnectedUser"];
+            }
+
+            set { HttpContext.Current.Session["ConnectedUser"] = value; }
+
+        
+         }
     }
 }

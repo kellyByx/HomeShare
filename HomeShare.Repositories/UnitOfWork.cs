@@ -61,6 +61,29 @@ namespace HomeShare.Repositories
 
         }
 
+        public MembreModel UserAuth(LoginModel lm)
+        {
+            MembreEntity me = ((MembreRepository)_membreRepo).GetFromLogin(lm.Login, lm.Password);
+            if (me == null) return null;
+            if (me != null)
+            {
+                return new MembreModel()
+                {
+                    Nom = me.Nom,
+                    Prenom = me.Prenom,
+                    Email = me.Email,
+                    Pays=me.Pays,
+                    Telephone = me.Telephone
+
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         public bool SaveContact(ContactModel cm)
         {
             MessageEntity me = new MessageEntity();
