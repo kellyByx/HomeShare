@@ -68,9 +68,13 @@ namespace HomeShare.Controllers
 
         public ActionResult Visiter()
         {
+            EchangerViewModel em = new EchangerViewModel();
             ViewBag.Visiter = "active";
 
-            return View();
+            return View(em);
+
+
+            
         }
 
         

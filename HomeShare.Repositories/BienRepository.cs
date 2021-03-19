@@ -26,6 +26,11 @@ namespace HomeShare.Repositories
             return base.Get(requete);
         }
 
+        public List<BienEntity> GetAll()
+        {
+            string requete = "Select * [Titre],[DescLong],[Ville],[NombrePerson] from BienEchange";
+            return base.Get(requete);
+        }
         public BienEntity GetOne(int PK)
         {
             throw new NotImplementedException();

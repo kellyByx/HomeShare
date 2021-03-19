@@ -52,8 +52,29 @@ namespace HomeShare.Repositories
             return biens;
         }
 
-      
-    
+        public List<BienModel> GetBienAll()
+        {
+            List<BienEntity> bienFromDb = _bienRepo.Get();
+
+            List<BienModel> biens = new List<BienModel>();
+
+            foreach (BienEntity item in bienFromDb)
+            {
+                //mapping:
+                BienModel Bien = new BienModel();
+                Bien.Titre = item.Titre;
+                Bien.DescLong = item.DescLong;
+                Bien.NombrePerson = item.NombrePerson;
+                Bien.Ville = item.Ville;
+         
+                biens.Add(Bien);
+            }
+
+            return biens;
+        }
+
+
+
 
         public bool SaveSignUp(MembreModel mm)
         {
